@@ -19,3 +19,7 @@ This creates a launch config that the ASG uses to create EC2 instances. The EC2 
 ## RDS cluster
 
 The RDS cluster creates 3 RDS instances that is split between the private subnets. This is running the aurora engine.
+
+## Budgets / Billing
+
+Creates a cloudwatch alert for billing AND also creates a AWS Budget alert. The budget is the easier way, but havinn the cloudwatch alert means you can then send multiple alerts to the same email address for mulitple services. 
