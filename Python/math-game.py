@@ -1,3 +1,5 @@
+# This was a little math game I made playing around with a random number generator.
+
 from random import randint
 import random
 number1 = randint(1,12)
