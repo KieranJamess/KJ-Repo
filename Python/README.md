@@ -13,3 +13,7 @@ As the title suggests, it's a simple math game. It has a scoreboard so you know 
 ### Dice Roller
 
 The dice roller games has two defined functions depending what dice game you want. You have the standard 6 sided dice, or you can have the DnD dice which has a dictionary to call for the number list, depending on the user input. 
+
+### Hangman
+
+A small hangman game that gives you 10 goes to guess the word. Everytime you guess the correct charater, it will update the '-' with a 'char' and inform you that you have guessed a charater correctly.
