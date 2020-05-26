@@ -102,7 +102,6 @@ while should_restart == True:
     elif playerscore > 21 and dealerscore > 21:
         print(f'You have {playerscore}. The dealer has {dealerscore}')
         print(f'The dealer and you have both gone over 21!')
-        currency = currency - int(bet)
     elif playerscore > 21 >= dealerscore:
         print(f'You have {playerscore}. The dealer has {dealerscore}')
         print(f'Dealer wins')
@@ -113,7 +112,11 @@ while should_restart == True:
     play_again = input('Would you like to play again? Y/N ')
     play_again = play_again.upper()
     if play_again == 'Y':
-        should_restart = True
+        if currency == 0:
+            print('You have no more points! Come back when you have some more.\n')
+            should_restart = False
+        elif currency < 0:
+                continue
     elif play_again == 'N':
         print(f'You ended on {currency}')
         should_restart = False
