@@ -3,6 +3,7 @@
 def drawcard():
     from random import randint
     import random
+    import time
     
     global playerscore
     
@@ -15,8 +16,10 @@ def drawcard():
             card = randint(1,11)
             playerscore = playerscore + card
             print(f'You now have {playerscore}\n')
+            time.sleep(1.0)
+            if playerscore <= 21:
+                continue
             if playerscore > 21:
-                print('bust')
                 break
             
         
@@ -28,6 +31,7 @@ def drawcard():
 def dealerbelow16():
     from random import randint
     import random
+    import time
     
     global dealerscore
     
@@ -36,6 +40,8 @@ def dealerbelow16():
         
         if dealerscore <= 16 :
             dealerscore = dealerscore + randint(1,11)
+            print(f'The dealer has {dealerscore}')
+            time.sleep(1.0)
         else:
             dealer_draw = False
             continue
@@ -97,6 +103,12 @@ while should_restart == True:
         print(f'You have {playerscore}. The dealer has {dealerscore}')
         print(f'The dealer and you have both gone over 21!')
         currency = currency - int(bet)
+    elif playerscore > 21 >= dealerscore:
+        print(f'You have {playerscore}. The dealer has {dealerscore}')
+        print(f'Dealer wins')
+        currency = currency - int(bet)
+    else:
+        print('I am unsure of this function')
             
     play_again = input('Would you like to play again? Y/N ')
     play_again = play_again.upper()
