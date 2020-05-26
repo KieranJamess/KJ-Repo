@@ -70,8 +70,8 @@ currency = 100
 should_restart = True
 while should_restart == True:
     
-    playerscore = sum((randint(1,11),randint(1,11)))
-    dealerscore = sum((randint(1,11),randint(1,11)))    
+    playerscore = sum((randint(1,10),randint(1,10)))
+    dealerscore = sum((randint(1,10),randint(1,10)))    
     
     bets()
         
