@@ -1,3 +1,4 @@
+# Drawcard function - If the play confirms they want to draw a card with 'y', it adds a random interger from 1 to 11 to their current sum. If it goes over 21 they bust. They can continue to draw till bust or they choose not to draw. 
 def drawcard():
     from random import randint
     import random
@@ -21,7 +22,7 @@ def drawcard():
         elif draw == 'N':
             dealer_draw = False
             break
-            
+# forces the dealer to draw a random card if the dealer has 16 or lower.
 def dealerbelow16():
     from random import randint
     import random

@@ -17,3 +17,7 @@ The dice roller games has two defined functions depending what dice game you wan
 ### Hangman
 
 A small hangman game that gives you 10 goes to guess the word. Everytime you guess the correct charater, it will update the '-' with a 'char' and inform you that you have guessed a charater correctly.
+
+### Blackjack
+
+Script that creates a blackjack game. allows the player to draw cards and forces the dealer to draw cards depending if they have a 16 or lower.
