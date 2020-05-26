@@ -52,7 +52,7 @@ def bets():
     bet_true = True
     while bet_true == True:
         
-        bet = input(f'How much would you like to bet? You currently have {currency} ')
+        bet = input(f'How much would you like to bet? You currently have {currency}: ')
         if int(bet) > currency:
             print('Please enter within your budget\n')
         elif int(bet) < 0:
