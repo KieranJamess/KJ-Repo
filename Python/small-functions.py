@@ -66,3 +66,13 @@ def blackjack (n1,n2,n3):
     else:
         print('bust')
     
+# Function that acts as a love calculator :)
+
+from random import randint
+
+user1 = input('First name of user 1: ')
+user2 = input('First name of user 2: ')
+
+score = randint(0,100)
+
+print(f'{user1} and {user2} have a {score}% love rating')
