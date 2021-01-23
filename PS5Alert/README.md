@@ -21,8 +21,4 @@ The script also has a response code checker to ensure that the site you're check
 ### Future Projects
 
 - UI?
-<<<<<<< HEAD
 - Email Alerts (DONE)
-=======
-- Email Alerts?
->>>>>>> ef6c5b0dfe116c47bb4cf6c34b0efcd273eafbec
