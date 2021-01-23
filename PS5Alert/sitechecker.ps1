@@ -100,7 +100,7 @@ function CheckSite {
     } until ($notinstock -eq 1)
     write-host "[ $sitestatus ] $sitename : $product is available!" -ForegroundColor Green
     Write-host "Total Checks: $totalchecks "-ForegroundColor Green
-    SendEmail -smtpserver 'smtp.gmail.com' -fromemail 'myemail@gmail.com' -toemail 'youremail@outlook.com' -subject 'PS5 Available!' -body 'PS5 Available!'
+    SendEmail -smtpserver 'smtp.gmail.com' -fromemail 'beaver11234@gmail.com' -toemail 'onlyeverything@outlook.com' -subject 'PS5 Available!' -body 'PS5 Available!'
     exit
     
 }
