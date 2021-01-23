@@ -9,6 +9,40 @@ param (
     $totalchecks = 0
 )
 
+function SendEmail {
+    param (
+        [Parameter()]
+        [string]
+        $smtpserver,
+
+        [Parameter()]
+        [string]
+        $fromemail,
+
+        [Parameter()]
+        [string]
+        $toemail,
+
+        [Parameter()]
+        [string]
+        $subject,
+
+        [Parameter()]
+        [string]
+        $body
+    )
+
+    Send-MailMessage -Body $body `
+    -From $fromemail `
+    -to $toemail `
+    -Credential (New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $fromemail ,(Get-Content -Path .\email.securestring | ConvertTo-SecureString)) `
+    -SmtpServer $smtpserver `
+    -Subject $subject `
+    -Encoding UTF8 `
+    -UseSsl
+    
+}
+
 function Get-UrlStatusCode([string] $Url)
 {
     try
@@ -43,7 +77,7 @@ function CheckSite {
         [int]
         $checkintervals
     )
-
+    Read-Host -AsSecureString -Prompt "Please enter email password"| ConvertFrom-SecureString | Out-File -FilePath .\email.securestring
     Write-host "Checking Site: $sitename for $product" -ForegroundColor Magenta
 
     DO {
@@ -64,9 +98,9 @@ function CheckSite {
             Write-host "[ $sitestatus ] The link for $sitename is returning $sitestatus" -ForegroundColor Red
         }
     } until ($notinstock -eq 1)
-    write-host "[$sitestatus]$sitename : $product is available!" -ForegroundColor Green
+    write-host "[ $sitestatus ] $sitename : $product is available!" -ForegroundColor Green
     Write-host "Total Checks: $totalchecks "-ForegroundColor Green
-    Start-Process -FilePath ".\assets\ps5.jpg"
+    SendEmail -smtpserver 'smtp.gmail.com' -fromemail 'myemail@gmail.com' -toemail 'youremail@outlook.com' -subject 'PS5 Available!' -body 'PS5 Available!'
     exit
     
 }

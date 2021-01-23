@@ -10,6 +10,8 @@ CheckSite -sitename "Amazon" -link "https://www.amazon.co.uk/dp/B08H95Y452" -tex
 
 This will check the PS5 product on Amazon and alert you if it can't find 'Currently Unavailable' on the page. It checks every 120 seconds. You don't want this too low, as I recently got blocked on Amazon for checking every 2 seconds!
 
+It will send you an email for confirmation so you can step away from your desk!
+
 The script also has a response code checker to ensure that the site you're checking is actually live.
 
 ### Expected Output
@@ -19,4 +21,4 @@ The script also has a response code checker to ensure that the site you're check
 ### Future Projects
 
 - UI?
-- Email Alerts?
+- Email Alerts (DONE)
