@@ -53,7 +53,7 @@ function CheckSite {
             wget $link -outfile ".\$sitename.txt"
             $status = Get-Content -Path ".\$sitename.txt"
             if ($status -match $textocheck) {
-                Write-host "[ $sitestatus ] $sitename : $product unavaiable!" -ForegroundColor Red
+                Write-host "[ $sitestatus ] $sitename : $product unavailable!" -ForegroundColor Red
                 Start-Sleep -Seconds $checkintervals
             }
             else {
@@ -66,7 +66,7 @@ function CheckSite {
     } until ($notinstock -eq 1)
     write-host "[$sitestatus]$sitename : $product is available!" -ForegroundColor Green
     Write-host "Total Checks: $totalchecks "-ForegroundColor Green
-    Start-Process -FilePath ".\ps5.jpg"
+    Start-Process -FilePath ".\assets\ps5.jpg"
     exit
     
 }
