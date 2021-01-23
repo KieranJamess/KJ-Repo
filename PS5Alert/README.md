@@ -16,9 +16,13 @@ The script also has a response code checker to ensure that the site you're check
 
 ### Expected Output
 
-![](.\assets\1.png)
+![example](./assets/1.png)
 
 ### Future Projects
 
 - UI?
+<<<<<<< HEAD
 - Email Alerts (DONE)
+=======
+- Email Alerts?
+>>>>>>> ef6c5b0dfe116c47bb4cf6c34b0efcd273eafbec
