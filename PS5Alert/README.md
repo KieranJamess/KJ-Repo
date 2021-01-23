@@ -14,7 +14,7 @@ The script also has a response code checker to ensure that the site you're check
 
 ### Expected Output
 
-![](C:\Users\Kieran\Documents\GithubRepos\KJ-Repo\PS5Alert\assets\1.png)
+![](.\assets\1.png)
 
 ### Future Projects
 
