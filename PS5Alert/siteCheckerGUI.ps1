@@ -163,7 +163,7 @@ $Subject.location                = New-Object System.Drawing.Point(419,129)
 $Subject.Font                    = New-Object System.Drawing.Font('Microsoft Sans Serif',10)
 
 $SubjectLabel                    = New-Object system.Windows.Forms.Label
-$SubjectLabel.text               = " "
+$SubjectLabel.text               = "Subject"
 $SubjectLabel.AutoSize           = $true
 $SubjectLabel.width              = 5
 $SubjectLabel.height             = 10
