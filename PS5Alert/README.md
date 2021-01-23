@@ -28,7 +28,7 @@ The script also has a response code checker to ensure that the site you're check
 
 ## EXE Download
 
-EXE Download [here](github.com/KieranJamess/KJ-Repo/blob/master/PS5Alert/siteCheckerGUI.exe)
+EXE Download [here](https://github.com/KieranJamess/KJ-Repo/blob/master/PS5Alert/sitecheckergui.exe)
 
 ### Future Projects
 
