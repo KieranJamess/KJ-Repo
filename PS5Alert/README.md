@@ -14,7 +14,7 @@ The script also has a response code checker to ensure that the site you're check
 
 ### Expected Output
 
-![](.\assets\1.png)
+![example](./assets/1.png)
 
 ### Future Projects
 
