@@ -26,6 +26,10 @@ The script also has a response code checker to ensure that the site you're check
 
 ![example2](./assets/2.png)
 
+## EXE Download
+
+EXE Download [here](github.com/KieranJamess/KJ-Repo/blob/master/PS5Alert/siteCheckerGUI.exe)
+
 ### Future Projects
 
 - UI (DONE)
