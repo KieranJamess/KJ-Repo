@@ -109,3 +109,7 @@ TEXT
 
 puppet agent -t
 puppet agent -t
+
+systemctl restart pe-puppetserver.service
+systemctl restart pe-puppetdb.service
+systemctl restart pe-nginx.service

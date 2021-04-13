@@ -1,6 +1,14 @@
-## Full guide coming soon!
+## Directions
 
+This creates a VM in azure to host a puppet master. This configuration creates a internal subnet for use but you can switch this out if you don't need to create a new subnet. 
 
+The default configuration uses Ubuntu 1804 and uses the latest version of Puppet Enterprise for Ubuntu 1804.
+
+If you want to use this without linking any github repos or creating any eyaml configurion, you can use the basic setup file. 
+
+You'll need to have generated a public / private key that has access to your puppet control github repo that you're using.
+
+You'll also need to have generated some eyaml keys - the guide can be found [here](https://github.com/voxpupuli/hiera-eyaml). 
 
 ## Requirements
 
