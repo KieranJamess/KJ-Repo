@@ -58,3 +58,6 @@ variable deployment_user_password {
     default = "KieranTest1"
 }
 
+variable vmsku {
+    default = "18.04"
+}

@@ -1,7 +1,7 @@
 #!/bin/bash
 HOME=/root
 WORKDIR="/tmp"
-SERVERVERSION="18.04"
+SERVERVERSION=${server_version}
 PUPPETFILE="puppet-enterprise-2019.8.5-ubuntu-$SERVERVERSION-amd64"
 PUPPETURL="https://pm.puppet.com/cgi-bin/download.cgi?dist=ubuntu&rel=$SERVERVERSION&arch=amd64&ver=latest"
 GITURL=${git_url}
