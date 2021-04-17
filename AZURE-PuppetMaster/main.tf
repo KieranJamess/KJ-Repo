@@ -1,10 +1,15 @@
+locals {
+  prefix = var.prefix
+  vmsku = var.vmsku
+}
+
 resource "azurerm_resource_group" "puppet" {
-  name     = "${var.prefix}-resources"
+  name     = "${local.prefix}-resources"
   location = var.location
 }
 
 resource "azurerm_virtual_network" "main" {
-  name                = "${var.prefix}-network"
+  name                = "${local.prefix}-network"
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.puppet.location
   resource_group_name = azurerm_resource_group.puppet.name
@@ -26,7 +31,7 @@ resource "azurerm_public_ip" "publicip" {
 }
 
 resource "azurerm_network_interface" "main" {
-  name                = "${var.prefix}-nic"
+  name                = "${local.prefix}-nic"
   location            = azurerm_resource_group.puppet.location
   resource_group_name = azurerm_resource_group.puppet.name
 
@@ -39,18 +44,18 @@ resource "azurerm_network_interface" "main" {
 }
 
 resource "azurerm_virtual_machine" "main" {
-  name                  = "${var.prefix}-vm"
+  name                  = "${local.prefix}-vm"
   location              = azurerm_resource_group.puppet.location
   resource_group_name   = azurerm_resource_group.puppet.name
   network_interface_ids = [azurerm_network_interface.main.id]
-  vm_size               = "${var.vmsize}"
+  vm_size               = var.vmsize
   delete_os_disk_on_termination = true
   delete_data_disks_on_termination = true
 
   storage_image_reference {
     publisher = "Canonical"
     offer     = "UbuntuServer"
-    sku       = "${var.vmsku}-LTS"
+    sku       = "${local.vmsku}-LTS"
     version   = "latest"
   }
   storage_os_disk {
@@ -71,7 +76,7 @@ resource "azurerm_virtual_machine" "main" {
 
 resource "azurerm_virtual_machine_extension" "puppet" {
   name                 = "puppet"
-  virtual_machine_id   = "${azurerm_virtual_machine.main.id}"
+  virtual_machine_id   = azurerm_virtual_machine.main.id
   publisher            = "Microsoft.Azure.Extensions"
   type                 = "CustomScript"
   type_handler_version = "2.0"
@@ -86,7 +91,7 @@ resource "azurerm_virtual_machine_extension" "puppet" {
           eyaml_pri_key="${var.eyaml_pri_key}"
           eyaml_pub_key="${var.eyaml_pub_key}"
           deployment_user_password="${var.deployment_user_password}"
-          server_version="${var.vmsku}"
+          server_version="${local.vmsku}"
         }))}"
     }
 SETTINGS

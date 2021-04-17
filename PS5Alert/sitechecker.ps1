@@ -6,7 +6,23 @@ param (
 
     [Parameter()]
     [int]
-    $totalchecks = 0
+    $totalchecks = 0,
+
+    [Parameter()]
+    [string]
+    $site = "Amazon",
+
+    [Parameter()]
+    [string]
+    $productlink = "https://www.amazon.co.uk/dp/B08H95Y452",
+
+    [Parameter()]
+    [string]
+    $checktext = "Currently unavailable",
+
+    [Parameter()]
+    [string]
+    $item = "PS5 Disk Version"
 )
 
 function SendEmail {
@@ -100,9 +116,9 @@ function CheckSite {
     } until ($notinstock -eq 1)
     write-host "[ $sitestatus ] $sitename : $product is available!" -ForegroundColor Green
     Write-host "Total Checks: $totalchecks "-ForegroundColor Green
-    SendEmail -smtpserver 'smtp.gmail.com' -fromemail 'X@gmail.com' -toemail 'X@outlook.com' -subject 'PS5 Available!' -body 'PS5 Available!'
+    SendEmail -smtpserver 'smtp.gmail.com' -fromemail 'beaver11234@gmail.com' -toemail 'onlyeverything@outlook.com' -subject 'PS5 Available!' -body 'PS5 Available!'
     exit
     
 }
 
-CheckSite -sitename "Amazon" -link "https://www.amazon.co.uk/dp/B08H95Y452" -textocheck "Currently unavailable" -product "PS5 Disk Version" -checkintervals 120
+CheckSite -sitename $site -link $productlink -textocheck $checktext -product $item -checkintervals 300
