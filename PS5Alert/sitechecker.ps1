@@ -116,9 +116,9 @@ function CheckSite {
     } until ($notinstock -eq 1)
     write-host "[ $sitestatus ] $sitename : $product is available!" -ForegroundColor Green
     Write-host "Total Checks: $totalchecks "-ForegroundColor Green
-    SendEmail -smtpserver 'smtp.gmail.com' -fromemail 'beaver11234@gmail.com' -toemail 'onlyeverything@outlook.com' -subject 'PS5 Available!' -body 'PS5 Available!'
+    SendEmail -smtpserver 'smtp.gmail.com' -fromemail 'X@gmail.com' -toemail 'X@outlook.com' -subject 'PS5 Available!' -body 'PS5 Available!'
     exit
     
 }
 
-CheckSite -sitename $site -link $productlink -textocheck $checktext -product $item -checkintervals 300
+CheckSite -sitename "Amazon" -link "https://www.amazon.co.uk/dp/B08H95Y452" -textocheck "Currently unavailable" -product "PS5 Disk Version" -checkintervals 120
