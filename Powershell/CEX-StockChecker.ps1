@@ -43,7 +43,7 @@ $allstores = (invoke-webrequest -Uri "$uri/stores" -Method Get | ConvertFrom-Jso
 # Loop through each store, calculate distance, and add it as a property to the store object
 $allstores | ForEach-Object {
     $store = $_
-    $distance = Get-Distance $redhill_lat $redhill_long $store.Latitude $store.Longitude
+    $distance = Get-Distance $localLatitude $localLongitude $store.Latitude $store.Longitude
     $store | Add-Member -NotePropertyName "Distance" -NotePropertyValue $distance
 }
 
